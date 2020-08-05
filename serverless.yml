@@ -1,0 +1,16 @@
+service: sls-typescript-api
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+
+plugins:
+  - serverless-plugin-typescript
+  - serverless-offline
+
+functions:
+  hello:
+    handler: src/function.handler
+    events:
+      - http: ANY /
+      - http: "ANY {proxy+}"
