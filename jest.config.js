@@ -12,5 +12,8 @@ module.exports = {
     "^.+\\.(t|j)s$": "ts-jest"
   },
   coverageDirectory: "../coverage",
-  testEnvironment: "node"
+  testEnvironment: "node",
+  setupFilesAfterEnv: [
+    './testEnv.ts'
+  ]
 };
